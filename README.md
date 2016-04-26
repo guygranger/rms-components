@@ -419,20 +419,14 @@ Conditional logic allows content to be dynamically shown or hidden based on the 
 #### if
 This basic conditional operator is used to test if an attribute has any value. If this attribute has a value, it returns content specified within this block.
 
-	{{#if @@attribute@@}} exists and has content {{/if-cond}}
+	{{#if @@attribute@@}} exists and has content {{/if}}
 #### if-cond
 
 Conditional operator used to perform a string comparison of an attribute's value. If true, returns content specified within block.
 
 	{{#if-cond @@attribute@@ '==' 'true'}} Yes, it's true {{/if-cond}}
 
-**if-cond** supports, '==' equal to, and '!=' not equal to.
-
-#### each
-
-Iterator used to traverse through an object or array. Returns access to child attributes within block. Order is preserved, no sort.
-
-	{{#each @@manifest@@}} @@timestamp@@ - @@note@@ {{/each}}
+**if-cond** supports, '==' equal to, and '~' not equal to.
 
 ### Limits of conditional logic
 
@@ -478,11 +472,6 @@ Iterator used to traverse through an object or array. Returns access to child at
 	ID required. 
 	{{/if}}
 
-	Details:
-	{{#each @@manifest@@}}
-	@@timestamp@@ - @@note@@
-	{{/each}}
-
 	See @@web_link@@ for more.
 
 #### Output
@@ -491,10 +480,6 @@ Iterator used to traverse through an object or array. Returns access to child at
 	
 	You have a job to process within 4 days at Hawthorn. 
 	See the check-in desk on arrival.
-	
-	Details:
-	20-10-2014 10:15 - Req. Start Time
-	20-10-2014 16:00 - End Time
 	
 	See http://customer.au.whispir.com/s/aYid781 for more.
 
